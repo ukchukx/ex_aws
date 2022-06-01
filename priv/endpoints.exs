@@ -137,7 +137,10 @@
             "us-east-1" => %{},
             "us-east-2" => %{},
             "us-west-1" => %{},
-            "us-west-2" => %{}
+            "us-west-2" => %{},
+            "us-west-000" => %{},
+            "us-west-001" => %{},
+            "us-west-002" => %{}
           }
         },
         "pinpoint" => %{
