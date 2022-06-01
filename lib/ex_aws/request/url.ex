@@ -32,6 +32,14 @@ defmodule ExAws.Request.Url do
 
   defp normalize_path(url, _normalize) do
     url |> Map.update(:path, "", &String.replace(&1, ~r/\/{2,}/, "/"))
+
+    # fixed the error -> :path in URI must be nil or an absolute path if :host or :authority are given.
+    # the above error is happening because the path doesn't have a slash at the beginning.
+    if url.path != "" and hd(String.split(url.path, "/")) != "" do
+      Map.put(url, :path, "/" <> url.path)
+    else
+      url
+    end
   end
 
   defp convert_port_to_integer(url = %{port: port}) when is_binary(port) do
