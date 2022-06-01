@@ -30,7 +30,10 @@
         "us-east-1" => %{"description" => "US East (N. Virginia)"},
         "us-east-2" => %{"description" => "US East (Ohio)"},
         "us-west-1" => %{"description" => "US West (N. California)"},
-        "us-west-2" => %{"description" => "US West (Oregon)"}
+        "us-west-2" => %{"description" => "US West (Oregon)"},
+        "us-west-000" => %{"description" => "US West (Backblaze 0)"},
+        "us-west-001" => %{"description" => "US West (Backblaze 1)"},
+        "us-west-002" => %{"description" => "US West (Backblaze 2)"}
       },
       "services" => %{
         "connect" => %{
@@ -42,7 +45,10 @@
             "eu-central-1" => %{},
             "eu-west-2" => %{},
             "us-east-1" => %{},
-            "us-west-2" => %{}
+            "us-west-2" => %{},
+            "us-west-000" => %{},
+            "us-west-001" => %{},
+            "us-west-002" => %{}
           }
         },
         "firehose" => %{
@@ -1358,6 +1364,18 @@
             },
             "us-west-2" => %{
               "hostname" => "s3.us-west-2.amazonaws.com",
+              "signatureVersions" => ["s3", "s3v4"]
+            },
+            "us-west-000" => %{
+              "hostname" => "s3.us-west-000.backblazeb2.com",
+              "signatureVersions" => ["s3", "s3v4"]
+            },
+            "us-west-001" => %{
+              "hostname" => "s3.us-west-001.backblazeb2.com",
+              "signatureVersions" => ["s3", "s3v4"]
+            },
+            "us-west-002" => %{
+              "hostname" => "s3.us-west-002.backblazeb2.com",
               "signatureVersions" => ["s3", "s3v4"]
             }
           },
